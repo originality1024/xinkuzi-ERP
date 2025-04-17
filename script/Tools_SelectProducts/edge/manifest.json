@@ -1,0 +1,14 @@
+{
+    "manifest_version": 3,
+    "name": "Tools for select products",
+    "version": "1.0",
+    "description": "跨境电商跟卖选品利润辅助计算工具",
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "icon16.png",
+            "32": "icon32.png"
+        } 
+    },
+    "permissions": ["activeTab", "scripting", "downloads"]
+}
