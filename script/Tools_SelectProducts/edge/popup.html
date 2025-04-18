@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>输入数据</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <!-- 添加 autocomplete="off" 属性阻止浏览器自动补全 -->
+    <form autocomplete="off">
+        <input type="text" id="inputName" placeholder="中文名">
+        <input type="text" id="inputPrice" placeholder="售价€">
+        <input type="text" id="inputLong" placeholder="最长边">
+        <input type="text" id="inputWidth" placeholder="次长边">
+        <input type="text" id="inputHeight" placeholder="最短边">
+        <input type="text" id="inputWeight" placeholder="重量kg">
+        <input type="text" id="inputCost" placeholder="采购价">
+        <input type="text" id="inputLink" placeholder="链接">
+        <input type="text" id="inputAsin" placeholder="ASIN">
+        <label id="inputexpressFee">缺参</label>
+        <label id="inputprofit">缺参</label>
+        <label id="inputlevel">缺参</label>
+    </form>
+    <div id="button">
+        <button type="button" id="saveButton">保存</button>
+        <button type="button" id="viewButton">查看</button>
+        <button type="button" id="undoButton">撤销</button>
+        <button type="button" id="exampleButton">示例</button>
+        <button type="button" id="clearButton">清空</button>
+    </div>
+    <script src="popupTemporarilyStore.js"></script>    <!-- 暂存数据 -->
+    <script src="popup.js"></script>
+    <script src="popupSave.js"></script>    <!-- 保存数据 -->
+    <script src="popupView.js"></script>    <!-- 查看数据 -->
+    <script src="popupUndo.js"></script>    <!-- 撤销操作 -->
+    <script src="popupExample.js"></script>  <!-- 示例数据 -->
+    <script src="popupClear.js"></script>    <!-- 清空数据 -->
+</body>
+</html>
