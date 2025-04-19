@@ -1,0 +1,37 @@
+:root {
+    --primary-bg: #f1f1f1;
+    --secondary-bg: #cbcbcb;
+    --text-border: #111111;
+    --accent-text: #b62100;
+}
+
+.login-container {
+    background: var(--secondary-bg);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    width: 320px;
+    margin: 3rem auto;
+}
+
+.login-form input {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 1rem;
+    border: 1px solid var(--text-border);
+    border-radius: 4px;
+}
+
+.login-form button {
+    background: var(--accent-text);
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.login-form button:hover {
+    opacity: 0.9;
+}

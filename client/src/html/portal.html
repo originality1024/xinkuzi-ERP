@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="../css/sunportal.css">
+	<script src="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/Chart.js/3.7.1/chart.js"></script>
+	<title>仪表盘</title>
+</head>
+<body>
+	<div class="container">
+		<div class="header">
+			<h1>新裤子ERP</h1>
+			<button id="appearance"><img id="appearanceimg"src="../../public/moonbutton.png" alt="moon" width="30px" height="30px"></button>
+			<button id="settings" onclick="window.location.href='settings.html'">设置</button>
+			<button id="login" onclick="window.location.href='login.html'">登录</button>
+			<hr>
+			<button>店铺管理</button>
+			<button>订单管理</button>
+			<button>财务数据</button>
+			<button>工具库</button>
+		</div>
+		<div class="main">
+			<div class="left">
+				<div class="left_1">
+					<table>
+						<tr>
+							<th class="first_column">待办事项</th>
+							<th>时间</th>
+							<th>详情</th>
+						</tr>
+						<tr>
+							<td><a href="#">快递处理</a></td>
+							<td>25/3/27 18:00</td>
+							<td><label>订单编号为 5548 的猪玩偶服，客户反馈快递无法送到指定地址。经核实，该订单发货地为中国深圳，目的地为巴西圣保罗。由于巴西当地近期受到暴雨天气影响，部分地区交通瘫痪，物流站点临时关闭，导致快递配送受阻。此外，当地海关清关流程复杂且效率低下，货物在海关滞留时间较长，也进一步延误了配送。目前已与物流服务商沟通，他们正在协调安排其他运输路线和配送方式，争取尽快将货物送达客户手中。同时，已联系客户说明情况，客户表示理解并愿意等待。</label></td>
+						</tr>
+						<tr>
+							<td><a href="#">退款处理</a></td>
+							<td>25/3/28 09:30</td> <!-- 写入时间 -->
+							<td><label>订单编号为 5505 的猪玩偶服，客户反馈快递太慢。经调查，此订单于 25/3/25 从中国上海发货，原计划 3 - 5 个工作日送达美国纽约。但承运的物流公司近期货物量激增，在转运中心出现了货物积压的情况。同时，航班安排紧张，导致货物延迟起飞。我们已经与物流公司进行了多次沟通，他们承诺会优先处理该订单，并加急派送。已向客户道歉并说明情况，客户希望能尽快收到货物，并表示如果延迟时间过长可能会考虑退款。</label></td> <!-- 扩充事件详情 -->
+						</tr>
+						<tr>
+							<td><a href="#">退款处理</a></td>
+							<td>25/3/28 14:15</td> <!-- 写入时间 -->
+							<td><label>订单编号为 1932 的 U 形枕，客户反馈收到的货物不对。客户下单的是蓝色记忆棉 U 形枕，但实际收到的是粉色普通海绵 U 形枕。经核实，是仓库工作人员在拣货时出现了失误，拿错了货物。我们已经向客户诚挚道歉，并提出了两个解决方案：一是为客户重新发送正确的商品，并赠送一张 10 元的店铺优惠券；二是客户可以选择退货，我们会在收到退货后立即处理退款。客户目前还在考虑中，我们会持续跟进。</label></td> <!-- 扩充事件详情 -->
+						</tr>
+					</table>
+					<table>
+						<tr>
+							<td><label>3条待处理</label></td>
+							<td><label>3条待回复</label></td>
+							<td><button>有道翻译</button></td>
+							<td><button>递四方</button></td>
+							<td><button>金顺通达</button></td>
+							<td><button>网易邮箱</button></td>
+							<td><button>更多工具</button></td>
+							<td><button>更多售后</button></td>
+						</tr>
+					</table>
+				</div>
+				<div class="left_2">
+					<table>
+						<tr>
+							<th>仓库待确认订单</th>
+							<th>商品</th>
+							<th>购买时间</th>
+							<th>购买平台</th>
+							<th>金额</th>
+							<th>现付/记账</th>
+						</tr>
+						<tr>
+							<td>402-6153296-2819512</td>
+							<td>木质厨具一套</td>
+							<td>25/3/27 18:02</td>
+							<td>1688</td>
+							<td>66.74</td>
+							<td>记账</td>
+						</tr>
+						<tr>
+							<td>408-3471301-0682762</td>
+							<td>书籍纸巾盒</td>
+							<td>25/3/28 08:00</td>
+							<td>1688</td>
+							<td>77.35</td>
+							<td>记账</td>
+						</tr>
+						<tr>
+							<td>405-1355567-8237168</td>
+							<td>百洁布</td>
+							<td>25/3/28 09:30</td>
+							<td>1688</td>
+							<td>35.57</td>
+							<td>记账</td>
+						</tr>
+						<tr>
+							<td>402-7808380-9715565</td>
+							<td>雪铁龙方向盘套</td>
+							<td>25/3/28 11:15</td>
+							<td>1688</td>
+							<td>0.00</td>
+							<td>记账</td>
+						</tr>
+						<tr>
+							<td>171-2699592-4757165</td>
+							<td>油布桌布 180 厘米</td>
+							<td>25/3/28 13:00</td>
+							<td>1688</td>
+							<td>44.20</td>
+							<td>记账</td>
+						</tr>
+						<tr>
+							<td>407-0715097-8054734</td>
+							<td>50 毫米金刚石切割片*2</td>
+							<td>25/3/28 14:45</td>
+							<td>1688</td>
+							<td>50.00</td>
+							<td>记账</td>
+						</tr>
+						<tr>
+							<td>407-0715097-8054734</td>
+							<td>油布桌布 180 厘米</td>
+							<td>25/3/28 16:30</td>
+							<td>1688</td>
+							<td>44.20</td>
+							<td>记账</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			<div class="right">
+				<div class="rigft_1">
+					<canvas id="fiLiCh"></canvas>
+				</div>
+				<div class="rigft_2">
+					<canvas id="fiPiCh"></canvas>
+				</div>
+			</div>
+		</div>
+		<div class="footer">
+			<!-- <p>版权所有 &copy; 2025</p> -->
+			<img src="../../public/log.png" alt="logo" width="30px" height="30px">
+		</div>
+	</div>
+</body>
+<script src="../javascript/portal.js"></script>
+</html>

@@ -1,0 +1,222 @@
+/* 取消默认 */
+html, body {
+    padding: 0px;
+    margin: 0px;
+    color: #c3c3c3;
+    background-color: #111111;
+}
+
+/* 页眉 */
+.header {
+    padding: 0px;
+    margin: 0px;
+    background-color: #222222; /* 替换为夜间模式背景色 */
+}
+
+/* 新裤子ERP */
+.header h1 {
+    padding: 5px 10px 5px 10px;
+    margin: 0px;
+    display: inline-block;
+    color: #c3c3c3; /* 替换为夜间模式字体颜色 */
+    font-size: 30px;
+    transition: all 0.2s ease; /* 添加过渡效果，持续时间0.2秒，缓动函数为ease */
+}
+
+/* 鼠标悬停效果 */
+.header h1:hover {
+    color: #b62100; /* 保持焦点字体颜色 */
+}
+
+/* 切换模式按钮 */
+#appearance {
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+    width: 30px; /* 按钮宽度 */
+    height: 30px; /* 按钮高度 */
+    background-size: cover; /* 确保图片覆盖整个按钮区域 */
+    position: absolute; /* 绝对定位 */
+    transform: translateY(10px); /* 向下偏移10px，实现垂直居中 */
+}
+#appearance:hover {
+    background-color: #222222; /* 替换为夜间模式背景色 */
+}
+
+/* 登录和设置按钮 */
+#login,#settings {
+    padding: 0px 0px 0px 0px;
+    margin: 10px 20px 10px 0px;
+    width: 60px;
+    height: 30px;
+    float: right; 
+    border-radius: 5px;
+    border: 1px solid #c3c3c3; /* 替换为夜间模式边框颜色 */
+    color: #c3c3c3; /* 替换为夜间模式字体颜色 */
+    transition: all 0.2s ease; /* 添加过渡效果，持续时间0.2秒，缓动函数为ease */;
+}
+
+/* 鼠标悬停效果 */
+#login:hover,#settings:hover {
+    color: #b62100; /* 保持焦点字体颜色 */
+}
+
+/* 分割线 */
+.header hr{
+    padding: 0px;
+    margin: 0px;
+    position: relative; /* 为 hr 设置相对定位，作为 #moon 的定位参考 */
+}
+
+/* 导航链接按钮 */
+.header button {
+    padding: 5px 10px;
+    margin: 0px 0px 0px 0px;
+    font-weight: bold;
+    border: none;
+    background: none;
+    font-size: 14px;
+    cursor: pointer; /* 鼠标指针为手型，增强交互性 */
+    text-align: left; /* 文字左对齐，可按需调整 */
+    color: #c3c3c3; /* 替换为夜间模式字体颜色 */
+    text-align: center;
+    transition: all 0.2s ease; /* 添加过渡效果，持续时间0.2秒，缓动函数为ease */
+}
+
+/* 鼠标悬停效果 */
+.header button:hover {
+    color: #b62100; /* 保持焦点字体颜色 */
+    background-color: #333333; /* 替换为夜间模式背景色 */
+}
+
+/* 主要内容 */
+.main {
+    padding: 10px 10px 10px 10px;
+    margin: 0px 0px 0px 0px;
+    background-color: #333333; /* 替换为夜间模式背景色 */
+    display: flex; /* 使用flex布局 */
+}
+
+/* 主体表格格式化 */
+.main table {
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+    border-collapse: collapse; /* 合并表格边框 */
+    text-align: center;
+}
+
+.main th,.main td {
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    border: 1px solid #c3c3c3; /* 替换为夜间模式边框颜色 */
+}
+
+/* 主体链接格式化 */
+.main a {
+    text-decoration: none; /* 去除下划线 */
+    color: #c3c3c3; /* 替换为夜间模式字体颜色 */
+}
+
+/* 主体按钮格式化 */
+.main button {
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px;
+    width: 30px;
+    font-weight: bold;
+    border: none;
+    background: none;
+    font-size: 14px;
+    cursor: pointer; /* 鼠标指针为手型，增强交互性 */
+    text-align: left; /* 文字左对齐，可按需调整 */
+    color: #c3c3c3; /* 替换为夜间模式字体颜色 */
+    text-align: center;
+    transition: all 0.2s ease; /* 添加过渡效果，持续时间0.2秒，缓动函数为ease */
+}
+
+/* 鼠标悬停效果 */
+.main button:hover {
+    color: #b62100; /* 保持焦点字体颜色 */
+}
+
+/* 主体图表格式化 */
+.main canvas {
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+}
+
+/* 左侧内容 */
+.main .left {
+    padding: 0px 10px 0px 0px;
+    margin: 0px 0px 0px 0px;
+    width: calc(50% - 5px); /* 左侧内容宽度为父元素main的50%-5px */
+    display: flex; /* 使用flex布局 */
+    flex-wrap: wrap; /* 允许内容换行 */
+    align-self: start; /* 垂直对齐顶部 */
+    flex-direction: column; /* 垂直排列 */
+}
+
+/* 左侧表格 */
+.main .left table {
+    padding: 0px;
+    margin: 0px;
+    width: 100%; /* 表格宽度为父元素left_1的100% */
+    border-collapse: collapse;
+}
+
+/* 左侧内容1 */
+.main .left_1 {
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 10px 0px;
+    width: 100%;
+    min-width: 240px;
+    order: 1; /* 调整顺序，使其排在第一组内容的前面 */
+}
+
+/* 左侧内容1表格1第一列 */
+.main .left_1 .first_column {
+    min-width: 32px;
+}
+
+/* 左侧内容2 */
+.main .left_2 {
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 10px 0px;
+    width: 100%;
+    order: 2; /* 调整顺序，使其排在第一组内容的第二 */
+}
+
+/* 右侧内容 */
+.main .right {
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 10px 0px;
+    width: calc(50% - 5px); /* 右侧内容宽度为父元素main的50%-5px */  
+    display: flex; /* 使用flex布局 */
+    flex-wrap: wrap; /* 允许内容换行 */
+    align-self: start; /* 垂直对齐顶部 */
+    flex-direction: column; /* 垂直排列 */
+}
+
+/* 右侧内容1 */
+.main .right_1 {
+    width: 100%;
+}
+
+/* 右侧内容2 */
+.main.right_2 {
+    width: 100%;  
+}
+
+/* 页脚 */
+.footer {
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px; 
+    background-color: #222222; /* 替换为夜间模式背景色 */
+}
+
+/* 页脚文本 */
+.footer p {
+    padding: 0px;
+    margin: 0px;
+    font-size: 12px;
+    color: #c3c3c3; /* 替换为夜间模式字体颜色 */
+    display: inline;
+}
