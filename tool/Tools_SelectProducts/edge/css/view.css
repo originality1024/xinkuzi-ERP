@@ -1,0 +1,471 @@
+/* 设置全局字体和背景颜色，参考popup.css */
+body {
+    font-family: Arial, sans-serif;
+    padding: 10px;
+    margin: 0;
+    background-color: #222222;
+}
+
+/* 导航栏样式 */
+.settings-nav {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #333;
+    border-radius: 8px;
+    overflow-x: auto;
+}
+
+.settings-nav a {
+    color: #c3c3c3;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.settings-nav a:hover {
+    background-color: #555;
+    color: #fff;
+}
+
+.settings-nav a:active {
+    background-color: #8B0000;
+}
+
+/* 标题样式，参考popup.css的文字颜色 */
+h1 {
+    color: #c3c3c3;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* 设置页面容器 */
+.settings-container {
+    width: 600px;
+    margin: 0 auto;
+}
+
+/* 设置分组 */
+.setting-group {
+    background-color: #2a2a2a;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #3a3a3a;
+}
+
+.setting-group h2 {
+    color: #ffa600;
+    font-size: 16px;
+    margin-top: 0;
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #444;
+}
+
+/* 设置项 */
+.setting-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.setting-item:last-child {
+    margin-bottom: 0;
+}
+
+.setting-item label {
+    color: #c3c3c3;
+    font-size: 14px;
+    min-width: 150px;
+}
+
+/* 输入框样式 - 移除number输入框的上下箭头 */
+.setting-item input[type="number"] {
+    width: 120px;
+    padding: 6px 10px;
+    border: 1px solid #555;
+    border-radius: 4px;
+    background-color: #333;
+    color: #c3c3c3;
+    font-size: 14px;
+    outline: none;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
+}
+
+.setting-item input[type="number"]::-webkit-outer-spin-button,
+.setting-item input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.setting-item input[type="number"]:focus {
+    border-color: #ffa600;
+}
+
+/* 重量段输入框移除箭头 */
+.weight-range input[type="number"],
+.weight-segment input[type="number"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
+}
+
+.weight-range input[type="number"]::-webkit-outer-spin-button,
+.weight-range input[type="number"]::-webkit-inner-spin-button,
+.weight-segment input[type="number"]::-webkit-outer-spin-button,
+.weight-segment input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* 单选按钮组 */
+.radio-group {
+    display: flex;
+    gap: 20px;
+}
+
+/* 运费设置 - 国家分组 */
+.country-shipping {
+    background-color: #333;
+    border-radius: 6px;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #444;
+}
+
+.country-shipping:last-child {
+    margin-bottom: 0;
+}
+
+.country-shipping h3 {
+    color: #ffa600;
+    font-size: 14px;
+    margin-top: 0;
+    margin-bottom: 10px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #555;
+}
+
+/* 重量段列表 */
+.weight-segments {
+    margin-bottom: 15px;
+}
+
+.weight-segment-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 10px;
+    background-color: #444;
+    border-radius: 4px;
+    margin-bottom: 5px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #c3c3c3;
+}
+
+.weight-segment-header span {
+    flex: 1;
+    text-align: center;
+}
+
+.weight-segment-header span:first-child {
+    flex: 1.5;
+}
+
+.weight-segment-header span:last-child {
+    width: 40px;
+}
+
+/* 单个重量段 */
+.weight-segment {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 10px;
+    background-color: #444;
+    border-radius: 4px;
+    margin-bottom: 5px;
+    gap: 8px;
+}
+
+.weight-range {
+    display: flex;
+    align-items: center;
+    flex: 1.5;
+    gap: 4px;
+}
+
+.weight-range input[type="number"] {
+    flex: 1;
+    width: 60px;
+    padding: 4px 6px;
+    border: 1px solid #555;
+    border-radius: 3px;
+    background-color: #333;
+    color: #c3c3c3;
+    font-size: 12px;
+    outline: none;
+}
+
+.weight-range input[type="number"]:focus {
+    border-color: #ffa600;
+}
+
+.weight-range span {
+    color: #c3c3c3;
+    font-size: 12px;
+}
+
+.weight-segment input[type="number"] {
+    flex: 1;
+    width: 70px;
+    padding: 4px 6px;
+    border: 1px solid #555;
+    border-radius: 3px;
+    background-color: #333;
+    color: #c3c3c3;
+    font-size: 12px;
+    outline: none;
+}
+
+.weight-segment input[type="number"]:focus {
+    border-color: #ffa600;
+}
+
+/* 删除按钮 */
+.delete-segment {
+    width: 50px;
+    height: 24px;
+    padding: 0;
+    font-size: 12px;
+    background-color: #666;
+    border-color: #555;
+}
+
+.delete-segment:hover {
+    background-color: #888;
+}
+
+/* 新增重量段按钮 */
+.add-segment {
+    width: 100%;
+    margin: 0;
+    background-color: #666;
+    border-color: #555;
+    font-size: 12px;
+}
+
+.add-segment:hover {
+    background-color: #888;
+}
+
+/* 冗余子组 */
+.redundancy-subgroup {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed #444;
+}
+
+.redundancy-subgroup:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+/* 冗余值容器 - 固定高度防止模式切换时高度变化 */
+.redundancy-value-container {
+    height: 40px;
+    position: relative;
+}
+
+.redundancy-value {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin-bottom: 0 !important;
+}
+
+.redundancy-value.hidden {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.radio-label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    color: #c3c3c3;
+    font-size: 14px;
+}
+
+.radio-label input[type="radio"] {
+    accent-color: #8B0000;
+}
+
+/* 权重设置 */
+.setting-group .setting-item.weight-item {
+    justify-content: flex-start;
+    gap: 20px;
+}
+
+.setting-group .setting-item.weight-item label {
+    min-width: 160px;
+}
+
+.setting-group .setting-item.weight-item input[type="number"] {
+    width: 80px;
+}
+
+/* 权重总和 */
+.weight-summary {
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px solid #444;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 5px;
+}
+
+.weight-summary span {
+    color: #c3c3c3;
+    font-size: 14px;
+}
+
+.weight-summary #weightTotal {
+    color: #ffa600;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* 通用按钮样式 */
+button {
+    margin: 5px;
+    border: 1px solid #8B0000;
+    border-radius: 2px;
+    width: auto;
+    padding: 5px 10px;
+    background-color: #8B0000;
+    cursor: pointer;
+    color: #c3c3c3;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    transition-duration: 0.4s;
+}
+
+button:hover {
+    background-color: #b62100;
+}
+
+.button-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    gap: 10px;
+    z-index: 1000;
+}
+
+/* 表格样式（保留原有的表格样式，供其他页面使用） */
+table {
+    width: 700px;
+    border-collapse: collapse;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    background-color: #222222;
+}
+
+th, td {
+    padding: 2px;
+    text-align: center;
+    border-bottom: 1px solid #808080;
+    color: #c3c3c3;
+    border: 1px solid #808080;
+}
+
+th {
+    background-color: #8B0000;
+    color: #c3c3c3;
+}
+
+tr:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+#name {
+    width: 200px;
+}
+
+/* 尺寸限制设置 - 国家分组 */
+.country-size-limits {
+    background-color: #333;
+    border-radius: 6px;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #444;
+}
+
+.country-size-limits:last-child {
+    margin-bottom: 0;
+}
+
+.country-size-limits h3 {
+    color: #ffa600;
+    font-size: 14px;
+    margin-top: 0;
+    margin-bottom: 10px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #555;
+}
+
+/* 重量级别分组 */
+.weight-class-limits {
+    background-color: #444;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #555;
+}
+
+.weight-class-limits:last-child {
+    margin-bottom: 0;
+}
+
+.weight-class-limits h4 {
+    color: #ffa600;
+    font-size: 13px;
+    margin-top: 0;
+    margin-bottom: 8px;
+    padding-bottom: 4px;
+    border-bottom: 1px dashed #666;
+}
+
+/* 公式提示 */
+.formula-hint {
+    color: #888;
+    font-size: 12px;
+    font-family: monospace;
+}
+
+/* 链接样式 */
+a {
+    color: #ffa600;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}

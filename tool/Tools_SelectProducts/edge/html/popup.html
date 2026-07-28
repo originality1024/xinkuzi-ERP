@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>输入数据</title>
+    <link rel="stylesheet" href="../css/popup.css">
+</head>
+<body>
+    <!-- 添加 autocomplete="off" 属性阻止浏览器自动补全 -->
+    <form autocomplete="off">
+        <input type="text" id="inputName" placeholder="中文名">
+        <input type="text" id="inputPrice" placeholder="售价€">
+        <input type="text" id="inputLong" placeholder="最长边">
+        <input type="text" id="inputWidth" placeholder="次长边">
+        <input type="text" id="inputHeight" placeholder="最短边">
+        <input type="text" id="inputWeight" placeholder="重量kg">
+        <input type="text" id="inputCost" placeholder="采购价">
+        <input type="text" id="inputLink" placeholder="链接">
+        <input type="text" id="inputAsin" placeholder="ASIN">
+        <label id="inputexpressFee">运:缺参</label>
+        <label id="inputprofit">利:缺参</label>
+        <label id="inputlevel">缺参</label>
+        <div id="warningMessage" class="warning-message"></div>
+    </form>
+    <div id="button">
+        <div class="button-left">
+            <button type="button" id="miniButton" title="小窗">⊞</button>
+            <select id="shippingTemplate" class="shipping-select">
+                <option value="france" data-currency="€">法国 (€)</option>
+                <option value="uk" data-currency="£">英国 (£)</option>
+            </select>
+        </div>
+        <div class="button-right">
+            <button type="button" id="saveButton">保存</button>
+            <button type="button" id="viewButton">查看</button>
+            <button type="button" id="settingsButton">设置</button>
+            <button type="button" id="clearButton">清空</button>
+        </div>
+    </div>
+    <script src="../js/lib/storage.js"></script>    <!-- 存储工具 -->
+    <script src="../js/popup/popupTemporarilyStore.js"></script>    <!-- 暂存数据 -->
+    <script src="../js/popup/popup.js"></script>    <!-- 主逻辑 -->
+    <script src="../js/popup/popupSave.js"></script>    <!-- 保存数据 -->
+    <script src="../js/popup/popupView.js"></script>    <!-- 查看数据 -->
+    
+    <script src="../js/popup/popupSettings.js"></script>  <!-- 设置 -->
+    <script src="../js/popup/popupClear.js"></script>    <!-- 清空数据 -->
+</body>
+</html>

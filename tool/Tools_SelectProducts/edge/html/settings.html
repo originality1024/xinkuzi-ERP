@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>设置</title>
+    <link rel="stylesheet" href="../css/view.css">
+</head>
+<body>
+    <h1>设置</h1>
+    
+    <!-- 导航栏 -->
+    <nav class="settings-nav">
+        <a href="#exchange-rate">汇率设置</a>
+        <a href="#shipping">运费设置</a>
+        <a href="#redundancy">冗余设置</a>
+        <a href="#shortcuts">快捷键设置</a>
+        <a href="#size-limits">尺寸限制</a>
+        <a href="#rating">评分设置</a>
+    </nav>
+    
+    <div class="settings-container">
+        <!-- 汇率设置 -->
+        <div class="setting-group" id="exchange-rate">
+            <h2>汇率设置</h2>
+            <div class="setting-item">
+                <label>欧元汇率 (EUR/CNY)</label>
+                <input type="number" id="eurRate" value="7.5" min="0" step="0.01">
+            </div>
+            <div class="setting-item">
+                <label>英镑汇率 (GBP/CNY)</label>
+                <input type="number" id="gbpRate" value="9.2" min="0" step="0.01">
+            </div>
+            <div class="setting-item" style="justify-content: flex-end;">
+                <button type="button" id="fetchExchangeRateBtn">获取实时汇率</button>
+            </div>
+        </div>
+        
+        <!-- 运费设置 -->
+        <div class="setting-group" id="shipping">
+            <h2>运费设置</h2>
+            
+            <!-- 法国运费设置 -->
+            <div class="country-shipping">
+                <h3>法国</h3>
+                <!-- 重量段列表 -->
+                <div class="weight-segments" id="franceWeightSegments">
+                    <div class="weight-segment-header">
+                        <span>重量范围 (kg)</span>
+                        <span>挂号费 (元)</span>
+                        <span>运费 (元/kg)</span>
+                        <span>其他费用 (元)</span>
+                        <span></span>
+                    </div>
+                    <div class="weight-segment" data-index="0">
+                        <div class="weight-range">
+                            <input type="number" class="range-min" value="0" min="0" step="0.1" placeholder="下限">
+                            <span>-</span>
+                            <input type="number" class="range-max" value="0.2" min="0" step="0.1" placeholder="上限">
+                        </div>
+                        <input type="number" class="reg-fee" value="18" min="0" step="0.1">
+                        <input type="number" class="ship-fee" value="83" min="0" step="0.1">
+                        <input type="number" class="other-fee" value="0" min="0" step="0.1">
+                        <button type="button" class="delete-segment">删除</button>
+                    </div>
+                    <div class="weight-segment" data-index="1">
+                        <div class="weight-range">
+                            <input type="number" class="range-min" value="0.2" min="0" step="0.1" placeholder="下限">
+                            <span>-</span>
+                            <input type="number" class="range-max" value="0.5" min="0" step="0.1" placeholder="上限">
+                        </div>
+                        <input type="number" class="reg-fee" value="20" min="0" step="0.1">
+                        <input type="number" class="ship-fee" value="92" min="0" step="0.1">
+                        <input type="number" class="other-fee" value="0" min="0" step="0.1">
+                        <button type="button" class="delete-segment">删除</button>
+                    </div>
+                    <div class="weight-segment" data-index="2">
+                        <div class="weight-range">
+                            <input type="number" class="range-min" value="0.5" min="0" step="0.1" placeholder="下限">
+                            <input type="number" class="range-max" value="15" min="0" step="0.1" placeholder="上限">
+                        </div>
+                        <input type="number" class="reg-fee" value="23" min="0" step="0.1">
+                        <input type="number" class="ship-fee" value="88" min="0" step="0.1">
+                        <input type="number" class="other-fee" value="0" min="0" step="0.1">
+                        <button type="button" class="delete-segment">删除</button>
+                    </div>
+                </div>
+                <button type="button" class="add-segment" data-country="france">新增重量段</button>
+            </div>
+            
+            <!-- 英国运费设置 -->
+            <div class="country-shipping">
+                <h3>英国</h3>
+                <!-- 重量段列表 -->
+                <div class="weight-segments" id="ukWeightSegments">
+                    <div class="weight-segment-header">
+                        <span>重量范围 (kg)</span>
+                        <span>挂号费 (元)</span>
+                        <span>运费 (元/kg)</span>
+                        <span>其他费用 (元)</span>
+                        <span></span>
+                    </div>
+                    <div class="weight-segment" data-index="0">
+                        <div class="weight-range">
+                            <input type="number" class="range-min" value="0" min="0" step="0.1" placeholder="下限">
+                            <span>-</span>
+                            <input type="number" class="range-max" value="0.2" min="0" step="0.1" placeholder="上限">
+                        </div>
+                        <input type="number" class="reg-fee" value="22" min="0" step="0.1">
+                        <input type="number" class="ship-fee" value="95" min="0" step="0.1">
+                        <input type="number" class="other-fee" value="0" min="0" step="0.1">
+                        <button type="button" class="delete-segment">删除</button>
+                    </div>
+                    <div class="weight-segment" data-index="1">
+                        <div class="weight-range">
+                            <input type="number" class="range-min" value="0.2" min="0" step="0.1" placeholder="下限">
+                            <span>-</span>
+                            <input type="number" class="range-max" value="0.5" min="0" step="0.1" placeholder="上限">
+                        </div>
+                        <input type="number" class="reg-fee" value="25" min="0" step="0.1">
+                        <input type="number" class="ship-fee" value="105" min="0" step="0.1">
+                        <input type="number" class="other-fee" value="0" min="0" step="0.1">
+                        <button type="button" class="delete-segment">删除</button>
+                    </div>
+                    <div class="weight-segment" data-index="2">
+                        <div class="weight-range">
+                            <input type="number" class="range-min" value="0.5" min="0" step="0.1" placeholder="下限">
+                            <input type="number" class="range-max" value="15" min="0" step="0.1" placeholder="上限">
+                        </div>
+                        <input type="number" class="reg-fee" value="28" min="0" step="0.1">
+                        <input type="number" class="ship-fee" value="100" min="0" step="0.1">
+                        <input type="number" class="other-fee" value="0" min="0" step="0.1">
+                        <button type="button" class="delete-segment">删除</button>
+                    </div>
+                </div>
+                <button type="button" class="add-segment" data-country="uk">新增重量段</button>
+            </div>
+        </div>
+        
+        <!-- 冗余设置 -->
+        <div class="setting-group" id="redundancy">
+            <h2>冗余设置</h2>
+            
+            <!-- 重量冗余 -->
+            <div class="redundancy-subgroup">
+                <div class="setting-item">
+                    <label>重量冗余模式</label>
+                    <div class="radio-group">
+                        <label class="radio-label">
+                            <input type="radio" name="weightRedundancyMode" value="proportion">
+                            <span>比例 (%)</span>
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="weightRedundancyMode" value="fixed" checked>
+                            <span>固定 (g)</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="redundancy-value-container">
+                    <div class="setting-item redundancy-value" id="weightProportionItem">
+                        <label>重量冗余比例 (%)</label>
+                        <input type="number" id="weightRedundancyProportion" value="10" min="0" max="100">
+                    </div>
+                    <div class="setting-item redundancy-value" id="weightFixedItem">
+                        <label>重量固定冗余 (g)</label>
+                        <input type="number" id="weightRedundancyFixed" value="50" min="0">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 尺寸冗余 -->
+            <div class="redundancy-subgroup">
+                <div class="setting-item">
+                    <label>长度冗余 (cm)</label>
+                    <input type="number" id="lengthRedundancy" value="5" min="0" step="0.5">
+                </div>
+                <div class="setting-item">
+                    <label>宽度冗余 (cm)</label>
+                    <input type="number" id="widthRedundancy" value="5" min="0" step="0.5">
+                </div>
+                <div class="setting-item">
+                    <label>高度冗余 (cm)</label>
+                    <input type="number" id="heightRedundancy" value="5" min="0" step="0.5">
+                </div>
+            </div>
+            
+            <!-- 成本冗余 -->
+            <div class="redundancy-subgroup">
+                <div class="setting-item">
+                    <label>成本冗余模式</label>
+                    <div class="radio-group">
+                        <label class="radio-label">
+                            <input type="radio" name="costRedundancyMode" value="proportion">
+                            <span>比例 (%)</span>
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="costRedundancyMode" value="fixed" checked>
+                            <span>固定 (元)</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="redundancy-value-container">
+                    <div class="setting-item redundancy-value" id="costProportionItem">
+                        <label>成本冗余比例 (%)</label>
+                        <input type="number" id="costRedundancyProportion" value="5" min="0" max="100">
+                    </div>
+                    <div class="setting-item redundancy-value" id="costFixedItem">
+                        <label>成本固定冗余 (元)</label>
+                        <input type="number" id="costRedundancyFixed" value="5" min="0">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 体积重计算 -->
+            <div class="redundancy-subgroup">
+                <div class="setting-item">
+                    <label>体积重除数</label>
+                    <input type="number" id="volumeWeightDivisor" value="8000" min="500" max="10000">
+                </div>
+                <div class="setting-item">
+                    <label>计算公式</label>
+                    <span class="formula-hint">体积重(kg) = 长×宽×高(cm) ÷ 除数</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 快捷键设置 -->
+        <div class="setting-group" id="shortcuts">
+            <h2>快捷键设置</h2>
+            <div class="setting-item">
+                <label>键盘快捷方式</label>
+                <button type="button" id="openShortcutsPage" class="shortcut-btn">打开键盘快捷方式页面</button>
+            </div>
+            <div class="setting-item">
+                <label>说明</label>
+                <span class="formula-hint">快捷键需在浏览器扩展管理页面的键盘快捷方式中设置</span>
+            </div>
+        </div>
+        
+        <!-- 尺寸限制设置 -->
+        <div class="setting-group" id="size-limits">
+            <h2>尺寸限制设置</h2>
+            
+            <!-- 法国尺寸限制 -->
+            <div class="country-size-limits">
+                <h3>法国</h3>
+                <div class="setting-item">
+                    <label>最长边限制 (cm)</label>
+                    <input type="number" id="franceMaxLength" value="60" min="0">
+                </div>
+                <div class="setting-item">
+                    <label>最长边最小 (cm)</label>
+                    <input type="number" id="franceMinMaxLength" value="15" min="0">
+                </div>
+                <div class="setting-item">
+                    <label>次长边最小 (cm)</label>
+                    <input type="number" id="franceMinMidLength" value="10" min="0">
+                </div>
+                <div class="setting-item">
+                    <label>长+宽+高限制 (cm)</label>
+                    <input type="number" id="franceMaxSum" value="90" min="0">
+                </div>
+            </div>
+            
+            <!-- 英国尺寸限制 -->
+            <div class="country-size-limits">
+                <h3>英国</h3>
+                
+                <!-- 0-2KG 主要地区 -->
+                <div class="weight-class-limits">
+                    <h4>0-2KG 主要地区</h4>
+                    <div class="setting-item">
+                        <label>最长边限制 (cm)</label>
+                        <input type="number" id="uk0-2kgMaxLength" value="60" min="0">
+                    </div>
+                    <div class="setting-item">
+                        <label>最长边最小 (cm)</label>
+                        <input type="number" id="uk0-2kgMinMaxLength" value="21" min="0">
+                    </div>
+                    <div class="setting-item">
+                        <label>次长边最小 (cm)</label>
+                        <input type="number" id="uk0-2kgMinMidLength" value="10" min="0">
+                    </div>
+                    <div class="setting-item">
+                        <label>三边长度限制-长 (cm)</label>
+                        <input type="number" id="uk0-2kgMaxLengthLimit" value="60" min="0">
+                    </div>
+                    <div class="setting-item">
+                        <label>三边长度限制-宽 (cm)</label>
+                        <input type="number" id="uk0-2kgMaxWidthLimit" value="40" min="0">
+                    </div>
+                    <div class="setting-item">
+                        <label>三边长度限制-高 (cm)</label>
+                        <input type="number" id="uk0-2kgMaxHeightLimit" value="40" min="0">
+                    </div>
+                    <div class="setting-item">
+                        <label>体积限制 (m³)</label>
+                        <input type="number" id="uk0-2kgMaxVolume" value="0.04" min="0" step="0.001">
+                    </div>
+                </div>
+                
+                <!-- 2-15KG 主要地区 -->
+                <div class="weight-class-limits">
+                    <h4>2-15KG 主要地区</h4>
+                    <div class="setting-item">
+                        <label>最长边限制 (cm)</label>
+                        <input type="number" id="uk2-15kgMaxLength" value="120" min="0">
+                    </div>
+                    <div class="setting-item">
+                        <label>最长边最小 (cm)</label>
+                        <input type="number" id="uk2-15kgMinMaxLength" value="21" min="0">
+                    </div>
+                    <div class="setting-item">
+                        <label>次长边最小 (cm)</label>
+                        <input type="number" id="uk2-15kgMinMidLength" value="10" min="0">
+                    </div>
+                    <div class="setting-item">
+                        <label>长+宽+高限制 (cm)</label>
+                        <input type="number" id="uk2-15kgMaxSum" value="150" min="0">
+                    </div>
+                    <div class="setting-item">
+                        <label>体积限制 (m³)</label>
+                        <input type="number" id="uk2-15kgMaxVolume" value="0.04" min="0" step="0.001">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 评分设置 -->
+        <div class="setting-group" id="rating">
+            <h2>评分设置</h2>
+            <div class="setting-item">
+                <label>发货方式</label>
+                <input type="number" id="weight-shippingMethod" class="weight-input" value="5" min="0" max="100">
+            </div>
+            <div class="setting-item">
+                <label>评分</label>
+                <input type="number" id="weight-rating" class="weight-input" value="10" min="0" max="100">
+            </div>
+            <div class="setting-item">
+                <label>评分数量（本国）</label>
+                <input type="number" id="weight-ratingCount" class="weight-input" value="5" min="0" max="100">
+            </div>
+            <div class="setting-item">
+                <label>上架时间</label>
+                <input type="number" id="weight-listingTime" class="weight-input" value="5" min="0" max="100">
+            </div>
+            <div class="setting-item">
+                <label>最近月销量</label>
+                <input type="number" id="weight-monthlySales" class="weight-input" value="15" min="0" max="100">
+            </div>
+            <div class="setting-item">
+                <label>物流时效（天）</label>
+                <input type="number" id="weight-deliveryTime" class="weight-input" value="10" min="0" max="100">
+            </div>
+            <div class="setting-item">
+                <label>货源数量</label>
+                <input type="number" id="weight-supplyCount" class="weight-input" value="5" min="0" max="100">
+            </div>
+            <div class="setting-item">
+                <label>印象分</label>
+                <input type="number" id="weight-impressionScore" class="weight-input" value="5" min="0" max="100">
+            </div>
+            <div class="setting-item">
+                <label>预估广告费</label>
+                <input type="number" id="weight-estimatedAdFee" class="weight-input" value="10" min="0" max="100">
+            </div>
+            <div class="setting-item">
+                <label>竞争情况</label>
+                <input type="number" id="weight-competition" class="weight-input" value="15" min="0" max="100">
+            </div>
+            <div class="setting-item">
+                <label>体积重量</label>
+                <input type="number" id="weight-volumeWeight" class="weight-input" value="5" min="0" max="100">
+            </div>
+            <div class="setting-item">
+                <label>售价潜力</label>
+                <input type="number" id="weight-pricePotential" class="weight-input" value="10" min="0" max="100">
+            </div>
+            <div class="setting-item">
+                <label>差异化空间</label>
+                <input type="number" id="weight-differentiation" class="weight-input" value="10" min="0" max="100">
+            </div>
+            <div class="weight-summary">
+                <span>权重总和：</span>
+                <span id="weightTotal">100</span>
+                <span>%</span>
+            </div>
+        </div>
+        
+        </div>
+    
+    <!-- 保存按钮 - 固定在右下角 -->
+    <div class="button-container">
+        <button type="button" id="saveButton">保存设置</button>
+        <button type="button" id="returnButton">返回</button>
+    </div>
+    
+    <script src="../js/lib/storage.js"></script>
+    <script src="../js/view/settings.js"></script>
+</body>
+</html>

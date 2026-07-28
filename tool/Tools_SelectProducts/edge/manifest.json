@@ -1,0 +1,33 @@
+{
+    "manifest_version": 3,
+    "name": "Tools for select products",
+    "version": "2.0",
+    "description": "跨境电商跟卖选品利润辅助计算工具",
+    "action": {
+        "default_popup": "html/popup.html",
+        "default_icon": {
+            "16": "icons/icon16.png",
+            "32": "icons/icon32.png"
+        } 
+    },
+    "permissions": ["activeTab", "scripting", "downloads", "storage"],
+    "background": {
+        "service_worker": "js/background.js"
+    },
+    "commands": {
+        "open-popup": {
+            "suggested_key": {
+                "default": "Alt+1",
+                "mac": "Alt+1"
+            },
+            "description": "打开主窗口"
+        },
+        "open-mini-popup": {
+            "suggested_key": {
+                "default": "Alt+2",
+                "mac": "Alt+2"
+            },
+            "description": "打开小窗"
+        }
+    }
+}
