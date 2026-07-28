@@ -1,6 +1,10 @@
 # xinkuzi-ERP
 轻量化跨境电商ERP系统
 
+已完成tools文件夹中edge选品插件的开发，listing编辑器正在开发中
+
+其他功能仍在完善中
+
 文件结构（预）
 xinkuzi-ERP/
 ├── client/                 ⭐ 前端核心
