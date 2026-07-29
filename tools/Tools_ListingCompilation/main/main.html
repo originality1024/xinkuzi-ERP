@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>新裤子-listing编辑器</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>亚马逊Listing编辑器</h1>
+            <div class="header-actions">
+                <button id="importKeywords">导入关键词</button>
+                <input type="file" id="keywordFile" accept=".txt,.csv" style="display:none">
+                <button id="saveListing">保存Listing</button>
+                <button id="previewListing">预览效果</button>
+            </div>
+        </div>
+        
+        <div class="main-content">
+            <div class="left-panel">
+                <div class="panel-title">关键词管理</div>
+                
+                <div class="section">
+                    <h3>关键词分类</h3>
+                    <div id="keywordClassification">
+                        <div class="category-item">
+                            <label><input type="checkbox" class="category-checkbox" data-category="核心词">核心关键词</label>
+                            <textarea class="category-textarea" placeholder="输入核心关键词，每行一个"></textarea>
+                        </div>
+                        <div class="category-item">
+                            <label><input type="checkbox" class="category-checkbox" data-category="长尾词">长尾关键词</label>
+                            <textarea class="category-textarea" placeholder="输入长尾关键词，每行一个"></textarea>
+                        </div>
+                        <div class="category-item">
+                            <label><input type="checkbox" class="category-checkbox" data-category="属性词">属性关键词</label>
+                            <textarea class="category-textarea" placeholder="输入属性关键词，每行一个"></textarea>
+                        </div>
+                        <div class="category-item">
+                            <label><input type="checkbox" class="category-checkbox" data-category="竞品词">竞品关键词</label>
+                            <textarea class="category-textarea" placeholder="输入竞品关键词，每行一个"></textarea>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h3>关键词分级</h3>
+                    <div id="keywordGrading">
+                        <div class="grade-item">
+                            <label>热度等级:</label>
+                            <select class="grade-select" id="heatLevel">
+                                <option value="high">高热度</option>
+                                <option value="medium">中热度</option>
+                                <option value="low">低热度</option>
+                            </select>
+                        </div>
+                        <div class="grade-item">
+                            <label>竞争程度:</label>
+                            <select class="grade-select" id="competitionLevel">
+                                <option value="low">低竞争</option>
+                                <option value="medium">中竞争</option>
+                                <option value="high">高竞争</option>
+                            </select>
+                        </div>
+                        <div class="grade-item">
+                            <label>推荐使用:</label>
+                            <div id="recommendedKeywords"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="right-panel">
+                <div class="panel-title">Listing编辑</div>
+                
+                <div class="section">
+                    <h3>商品标题</h3>
+                    <div class="field-group">
+                        <input type="text" id="productTitle" class="listing-input" placeholder="输入商品标题 (建议200字符以内)" maxlength="200">
+                        <span class="char-count">0/200</span>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h3>五点描述</h3>
+                    <div id="bulletPoints">
+                        <div class="bullet-item">
+                            <label>卖点1:</label>
+                            <textarea class="bullet-textarea" placeholder="输入核心卖点1"></textarea>
+                        </div>
+                        <div class="bullet-item">
+                            <label>卖点2:</label>
+                            <textarea class="bullet-textarea" placeholder="输入核心卖点2"></textarea>
+                        </div>
+                        <div class="bullet-item">
+                            <label>卖点3:</label>
+                            <textarea class="bullet-textarea" placeholder="输入核心卖点3"></textarea>
+                        </div>
+                        <div class="bullet-item">
+                            <label>卖点4:</label>
+                            <textarea class="bullet-textarea" placeholder="输入核心卖点4"></textarea>
+                        </div>
+                        <div class="bullet-item">
+                            <label>卖点5:</label>
+                            <textarea class="bullet-textarea" placeholder="输入核心卖点5"></textarea>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h3>商品描述</h3>
+                    <textarea id="productDescription" class="description-textarea" placeholder="输入详细商品描述，可以包含HTML格式"></textarea>
+                </div>
+                
+                <div class="section">
+                    <h3>搜索关键词 (Search Terms)</h3>
+                    <textarea id="searchTerms" class="listing-input" placeholder="输入后台搜索关键词，用空格分隔" maxlength="249"></textarea>
+                    <span class="char-count">0/249</span>
+                </div>
+                
+                <div class="section">
+                    <h3>关键词插入</h3>
+                    <div class="insert-area">
+                        <button class="insert-btn" data-target="productTitle">插入到标题</button>
+                        <button class="insert-btn" data-target="bulletPoints">插入到卖点</button>
+                        <button class="insert-btn" data-target="searchTerms">插入到搜索词</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="previewModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Listing预览</h2>
+                <div id="previewContent"></div>
+            </div>
+        </div>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+</html>

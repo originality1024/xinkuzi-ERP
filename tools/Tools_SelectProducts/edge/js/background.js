@@ -7,8 +7,8 @@
 let miniWindowId = null;
 
 // 小窗配置
-const MINI_WINDOW_WIDTH = 525;
-const MINI_WINDOW_HEIGHT = 160; // 增大高度，确保内容显示完整
+const MINI_WINDOW_WIDTH = 800;
+const MINI_WINDOW_HEIGHT = 300; // 增大高度，确保内容显示完整
 
 /**
  * 监听快捷键命令

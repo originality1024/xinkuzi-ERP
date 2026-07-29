@@ -340,12 +340,31 @@ shippingTemplate.addEventListener('change', async function() {
     const selectedOption = this.options[this.selectedIndex];
     const currency = selectedOption.dataset.currency;
     inputPrice.placeholder = '售价' + currency;
+    
+    // 保存选中的运费模板
+    try {
+        await Storage.updateSetting('selectedShippingTemplate', this.value);
+    } catch (error) {
+        console.error('保存运费模板选择失败:', error);
+    }
+    
     await jisuan();
 });
 
 // 加载时触发
 window.addEventListener("load", async ()=>{
     await loadSettings();
+    
+    // 恢复保存的运费模板选择
+    if (currentSettings && currentSettings.selectedShippingTemplate) {
+        const savedTemplate = currentSettings.selectedShippingTemplate;
+        // 检查保存的模板值是否存在于选项中
+        const exists = Array.from(shippingTemplate.options).some(option => option.value === savedTemplate);
+        if (exists) {
+            shippingTemplate.value = savedTemplate;
+        }
+    }
+    
     await jisuan(true);
     
     // 初始化售价货币符号
